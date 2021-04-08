@@ -17,7 +17,7 @@ class CreateAkunTable extends Migration
             $table->id();
             $table->string('nama', 50);
             $table->text('alamat');
-            $table->timestamps();
+            $table->timvestamps();
         });
     }
 
