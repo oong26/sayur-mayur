@@ -1,3 +1,13 @@
+How To Run
+1. Pull repository
+2. jalankan composer install
+3. buat database dengan nama : sayur_mayur
+4. jalankan php artisan migrate
+5. jalankan php artisan serve
+6. buka http://localhost:8000
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -60,4 +70,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# sayur-mayur
