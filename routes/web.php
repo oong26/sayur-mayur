@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+// Route::get('/dashboard', 'Backend\DashboardController@index')->name('dashboard');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::prefix('master')->group(function () {
+        Route::get('dashboard', 'Backend\DashboardController@index')->name('dashboard');
+        Route::resource('user', 'Backend\AdminController');
+    });
+});
+
+require __DIR__.'/auth.php';
