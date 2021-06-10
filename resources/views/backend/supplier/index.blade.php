@@ -12,7 +12,7 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ms-auto">
-                        <li><a href="#" class="fw-normal">{{ $title }}/{{ $subtitle }}</a></li>
+                        <li><a href="#" class="fw-normal">{{ $title }}&nbsp;/&nbsp;{{ $subtitle }}</a></li>
                     </ol>
                 </div>
             </div>
@@ -49,32 +49,30 @@
                     </div>
                     @endif
                     <h3 class="box-title">{{ $subtitle }}</h3>
-                    <a href="{{ $top_button }}" class="btn btn-primary text-white mb-3">
+                    <a href="{{ $top_button }}" class="btn btn-primary text-white mb-4">
                         Tambah
                     </a>
                     <table class="table table-xl-responsive mt-4" id="data_table">
                         <thead>
                             <th class="text-center">#</th>
+                            <th class="text-left">Kode Suplier</th>
                             <th class="text-left">Nama</th>
-                            <th class="text-center">Username</th>
+                            <th class="text-center">No. Hp</th>
+                            <th class="text-center">Alamat</th>
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
                             @forelse ($data as $item)
                             <tr>
-                                <td class="text-center pt-4">{{ $loop->iteration }}</td>
-                                <td>
-                                    <a data-toggle="modal" class="showDetailData" data-target=".modal-show-detail" data-image="{{ url(''.$item->profile_photo) }}">
-                                        {{-- <img src="cinqueterre.jpg" class="rounded" alt="Cinque Terre">  --}}
-                                        <img src="{{ url(''.$item->profile_photo) }}" class="rounded mr-4" alt="{{ $item->name }}" width="80" height="80">
-                                    </a>
-                                    {{ $item->name }}
-                                </td>
-                                <td class="text-center">{{ $item->username }}</td>
+                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td>{{ $item->supplier_code }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td class="text-center">{{ $item->phone }}</td>
+                                <td class="text-center">{{ $item->address }}</td>
                                 <td>
                                     <div class="form-inline p-0">
-                                        <a href="{{ route('user.edit', $item) }}" class="btn btn-success mr-2" title="Edit" data-toggle="tooltip"> <span class="fa fa-pen"></span> </a>
-                                        <form action="{{ route('user.destroy', $item) }}" method="post">
+                                        <a href="{{ route('supplier.edit', $item->supplier_code) }}" class="btn btn-success mr-2" title="Edit" data-toggle="tooltip"> <span class="fa fa-pen"></span> </a>
+                                        <form action="{{ route('supplier.destroy', $item->supplier_code) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="button" class="btn btn-danger" title="Hapus" data-toggle="tooltip" onclick="confirm('{{ __("Apakah anda yakin ingin menghapus?") }}') ? this.parentElement.submit() : ''">

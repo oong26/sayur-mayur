@@ -22,6 +22,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::prefix('master')->group(function () {
         Route::get('dashboard', 'Backend\DashboardController@index')->name('dashboard');
         Route::resource('user', 'Backend\AdminController');
+        Route::resource('courrier', 'Backend\CourrierController');
+        Route::resource('supplier', 'Backend\SupplierController');
     });
 });
 

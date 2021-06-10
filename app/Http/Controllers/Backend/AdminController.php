@@ -205,7 +205,7 @@ class AdminController extends Controller
                 }
             }
             $updateAdmin->save();
-            return redirect('master/user')->withStatus('Berhasil menambah data.');
+            return redirect('master/user')->withStatus('Berhasil menyimpan data.');
         }
         catch(\Exception $e){
             return redirect()->back()->withError($e->getMessage());
