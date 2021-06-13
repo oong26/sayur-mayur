@@ -20,36 +20,36 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('courrier.index') }}"
                         aria-expanded="false">
-                        <i class="fa fa-table" aria-hidden="true"></i>
+                        <i class="fa fa-truck" aria-hidden="true"></i>
                         <span class="hide-menu">Kurir</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('supplier.index') }}"
                         aria-expanded="false">
-                        <i class="fa fa-font" aria-hidden="true"></i>
+                        <i class="fa fa-people-carry" aria-hidden="true"></i>
                         <span class="hide-menu">Suplier</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('product.index') }}"
                         aria-expanded="false">
-                        <i class="fa fa-globe" aria-hidden="true"></i>
-                        <span class="hide-menu">Google Map</span>
+                        <i class="fa fa-box-open" aria-hidden="true"></i>
+                        <span class="hide-menu">Produk</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
                         aria-expanded="false">
-                        <i class="fa fa-columns" aria-hidden="true"></i>
-                        <span class="hide-menu">Blank Page</span>
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <span class="hide-menu">Resep</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
                         aria-expanded="false">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i>
-                        <span class="hide-menu">Error 404</span>
+                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                        <span class="hide-menu">Bahan-bahan</span>
                     </a>
                 </li>
                 <li class="text-center p-20 upgrade-btn">
