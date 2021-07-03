@@ -183,7 +183,9 @@ class AdminController extends Controller
             $updateAdmin->name = $request->get('nama_lengkap');
             $updateAdmin->username = $request->get('username');
             $updateAdmin->password = \Hash::make($request->get('password'));
+
             if($request->file('photo_profile') != null) {
+                return 'halo';
                 $folder = 'upload/admin/'.$request->get('username');
                 $file = $request->file('photo_profile');
                 $filename = date('YmdHis').$file->getClientOriginalName();

@@ -39,19 +39,19 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('recipe.index') }}"
                         aria-expanded="false">
                         <i class="fa fa-book" aria-hidden="true"></i>
                         <span class="hide-menu">Resep</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
+                {{-- <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
                         aria-expanded="false">
                         <i class="fa fa-list-alt" aria-hidden="true"></i>
                         <span class="hide-menu">Bahan-bahan</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="text-center p-20 upgrade-btn">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
