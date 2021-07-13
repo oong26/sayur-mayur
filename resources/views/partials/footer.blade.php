@@ -8,7 +8,7 @@
     <div class="row  justify-content-center">
       <div class="col-lg-6">
         <h3>SayurMayur</h3>
-        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+        <p> Hanya dengan menggunakan perangkat smartphone anda, kapan dan dimana saja anda dapat berbelanja sayur tanpa perlu repot lagi.</p>
       </div>
     </div>
 
