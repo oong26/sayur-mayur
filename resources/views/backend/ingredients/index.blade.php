@@ -12,7 +12,7 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ms-auto">
-                        <li><a href="#" class="fw-normal">{{ $title }}&nbsp;/&nbsp;{{ $subtitle }}</a></li>
+                        <li><a href="#" class="fw-normal">{{ $title }}/{{ $subtitle }}</a></li>
                     </ol>
                 </div>
             </div>
@@ -49,31 +49,29 @@
                     </div>
                     @endif
                     <h3 class="box-title">{{ $subtitle }}</h3>
-                    <a href="{{ $top_button }}" class="btn btn-primary text-white mb-4">
+                    <a href="{{ $top_button }}" class="btn btn-primary text-white mb-3">
                         Tambah
                     </a>
                     <table class="table table-xl-responsive mt-4" id="data_table">
                         <thead>
                             <th class="text-center">#</th>
-                            <th class="text-left">Kode Kurir</th>
-                            <th class="text-left">Nama</th>
-                            <th class="text-center">Jenis Kelamin</th>
-                            <th class="text-center">No. Hp</th>
+                            <th class="text-center">Nama Resep</th>
+                            <th class="text-center">Nama Bahan</th>
+                            <th class="text-center">Takaran</th>
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
                             @forelse ($data as $item)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td>{{ $item->courrier_code }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td class="text-center">{{ $item->gender }}</td>
-                                <td class="text-center">{{ $item->phone }}</td>
+                                <td class="text-center">{{ ucwords($item->recipe_name) }}</td>
+                                <td class="text-center">{{ ucwords($item->product_name) }}</td>
+                                <td class="text-center">{{ ucwords($item->dose) }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <div class="form-inline p-0">
-                                            <a href="{{ route('courrier.edit', $item->courrier_code) }}" class="btn btn-success mr-2" title="Edit" data-toggle="tooltip"> <span class="fa fa-pen"></span> </a>
-                                            <form action="{{ route('courrier.destroy', $item->courrier_code) }}" method="post">
+                                            <a href="{{ route('ingredients.edit', $item->id) }}" class="btn btn-success mr-2" title="Edit" data-toggle="tooltip"> <span class="fa fa-pen"></span> </a>
+                                            <form action="{{ route('ingredients.destroy', $item->recipe_code) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="button" class="btn btn-danger" title="Hapus" data-toggle="tooltip" onclick="confirm('{{ __("Apakah anda yakin ingin menghapus?") }}') ? this.parentElement.submit() : ''">
@@ -138,5 +136,5 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
 @endsection

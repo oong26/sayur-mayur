@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ingredients;
 use App\Models\Products;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use File;
 
 class RecipeController extends Controller
 {
@@ -74,6 +76,7 @@ class RecipeController extends Controller
                 'recipe_name' => 'required|min:3|max:50|unique:recipe,name',
                 'cover' => 'required',
                 'stock' => 'required',
+                'laba' => 'required'
             ],
             [
                 'required' => ':attribute harus diisi.',
@@ -86,6 +89,7 @@ class RecipeController extends Controller
                 'recipe_name' => 'Nama resep',
                 'cover' => 'Foto Sampul',
                 'stock' => 'Stok',
+                'laba' => 'Laba'
             ]
         );
 
@@ -131,9 +135,26 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($recipeCode)
     {
-        //
+        try {
+            $this->param['subtitle'] = 'Detail resep';
+            $this->param['top_button'] = route('ingredients.index');
+            $this->param['recipe'] = Recipe::select('name')->where('recipe_code', $recipeCode)->first();
+            $this->param['recipe_item'] = Ingredients::select('ingredients.*', 'products.name AS product_name')
+                                                    ->join('products', 'products.product_code', 'ingredients.product_code')
+                                                    ->where('recipe_code', $recipeCode)
+                                                    ->orderBy('products.name')
+                                                    ->get();
+
+            return view('backend.recipe.detail', $this->param);
+        }
+        catch(\Exception $e) {
+            return redirect()->back()->withError($e->getMessage());
+        }
+        catch(\Illuminate\Database\QueryException $e) {
+            return redirect()->back()->withError($e->getMessage());
+        }
     }
 
     /**
@@ -142,15 +163,14 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($productCode)
+    public function edit($recipeCode)
     {
         try{
             $this->param['subtitle'] = 'Edit';
-            $this->param['top_button'] = route('product.index');
-            $this->param['product'] = Products::where('product_code', $productCode)->first();
-            $this->param['supplier_code'] = Supplier::orderBy('supplier_code', 'ASC')->get();
+            $this->param['top_button'] = route('recipe.index');
+            $this->param['recipe'] = Recipe::where('recipe_code', $recipeCode)->first();
             
-            return view('backend.product.edit', $this->param);
+            return view('backend.recipe.edit', $this->param);
         }
         catch(\Exception $e){
             return redirect()->back()->withError($e->getMessage());
@@ -167,41 +187,39 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $productCode)
+    public function update(Request $request, $recipeCode)
     {
         try{
-            $product = Products::where('product_code', $productCode)->first();
+            $recipe = Recipe::where('recipe_code', $recipeCode)->first();
 
-            $isUnique = $product->name == $request->product_name ? '' : '|unique:product,product_name';
-            $cover = $product->cover;
+            $isUnique = $recipe->name == $request->recipe_name ? '' : '|unique:recipe,name';
+            $cover = $recipe->cover;
 
             $this->validate($request, 
                 [
-                    'product_code' => 'required',
-                    'product_name' => 'required|min:3|max:50'.$isUnique,
-                    'supplier_code' => 'required',
+                    'recipe_code' => 'required',
+                    'recipe_name' => 'required|min:3|max:50'.$isUnique,
                     'stock' => 'required',
-                    'price' => 'required',
-                    'sell_price' => 'required'
+                    'laba' => 'required',
+                    'is_visible' => 'required'
                 ],
                 [
                     'required' => ':attribute harus diisi.',
-                    'product_name.min' => 'Minimal panjang karakter 3.',
-                    'product_name.max' => 'Maksimal panjang karakter 50.',
+                    'recipe_name.min' => 'Minimal panjang karakter 3.',
+                    'recipe_name.max' => 'Maksimal panjang karakter 50.',
                     'unique' => ':attribute telah terdaftar.'
                 ],
                 [
-                    'product_code' => 'Kode produk',
-                    'product_name' => 'Nama produk',
-                    'supplier_code' => 'Suplier',
+                    'recipe_code' => 'Kode resep',
+                    'recipe_name' => 'Nama resep',
                     'stock' => 'Stok',
-                    'price' => 'Harga beli',
-                    'sell_price' => 'Harga jual'
+                    'laba' => 'Laba',
+                    'is_visible' => 'Pilihan'
                 ]
             );
 
             if($request->file('cover') != null) {
-                $folder = 'upload/product/'.$request->get('product_code');
+                $folder = 'upload/recipe/'.$request->get('recipe_code');
                 $file = $request->file('cover');
                 $filename = date('YmdHis').$file->getClientOriginalName();
                 // Get canonicalized absolute pathname
@@ -217,14 +235,12 @@ class RecipeController extends Controller
                     if(file_exists($cover)){
                         if(File::delete($cover)){
                             if($file->move($folder, $filename)) {
-                                DB::table('products')->where('product_code', $productCode)->update([
-                                    'product_code' => $request->get('product_code'),
-                                    'name' => $request->get('product_name'),
-                                    'supplier_code' => $request->get('supplier_code'),
+                                DB::table('recipe')->where('recipe_code', $recipeCode)->update([
+                                    'name' => $request->get('recipe_name'),
                                     'cover' => $folder.'/'.$filename,
                                     'stock' => $request->get('stock'),
-                                    'price' => $request->get('price'),
-                                    'sell_price' => $request->get('sell_price'),
+                                    'price' => $request->get('laba'),
+                                    'is_visible' => $request->get('is_visible'),
                                     'updated_at' => time()
                                 ]);
                             }
@@ -233,18 +249,16 @@ class RecipeController extends Controller
                 }
             }
             else {
-                DB::table('products')->where('product_code', $productCode)->update([
-                    'product_code' => $request->get('product_code'),
-                    'name' => $request->get('product_name'),
-                    'supplier_code' => $request->get('supplier_code'),
+                DB::table('recipe')->where('recipe_code', $recipeCode)->update([
+                    'name' => $request->get('recipe_name'),
                     'stock' => $request->get('stock'),
-                    'price' => $request->get('price'),
-                    'sell_price' => $request->get('sell_price'),
+                    'price' => $request->get('laba'),
+                    'is_visible' => $request->get('is_visible'),
                     'updated_at' => time()
                 ]);
             }
 
-            return redirect('master/product')->withStatus('Berhasil menyimpan perubahan.');
+            return redirect('master/recipe')->withStatus('Berhasil menyimpan perubahan.');
         }
         catch(\Exception $e){
             return redirect()->back()->withError($e->getMessage());
@@ -260,16 +274,16 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($productCode)
+    public function destroy($recipeCode)
     {
         try{
-            $product = Products::where('product_code', $productCode)->first();
+            $recipe = Recipe::where('recipe_code', $recipeCode)->first();
 
-            $cover = $product->cover;
+            $cover = $recipe->cover;
             if($cover != null){
                 if(file_exists($cover)){
                     if(File::delete($cover)){
-                        Products::where('product_code', $productCode)->delete();
+                        Recipe::where('recipe_code', $recipeCode)->delete();
                     }
                 }
             }

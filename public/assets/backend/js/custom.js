@@ -46,6 +46,7 @@ $(document).ready(function(){
      console.log(next);
      var html = '';
      html += '<tr id="field'+next+'">';
+     var phpCode = "<?php echo 'anjing'; ?>";
      html += '<td><select name="product_code[]" id="product_code[]" class="form-control"><option value="">Pilih bahan</option>@foreach ($product as $product_item)<option value="{{ $product_item->product_code }}">{{ $product_item->product_code }} - {{ $product_item->name }}</option>@endforeach</select></td> <td><input type="number" name="dose[]" id="dose[]" class="form-control" placeholder="Masukkan takaran disini"></td><td><button type="button" class="btn btn-danger ml-4 btn-delete-field" id="btn-delete-field'+next+'"><span class="fa fa-minus"></span></button></td>'
      html += '</tr>';
      $('tbody').append(html);

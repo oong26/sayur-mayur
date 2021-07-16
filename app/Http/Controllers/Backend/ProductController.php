@@ -24,10 +24,12 @@ class ProductController extends Controller
     public function index()
     {
         $this->param['subtitle'] = 'List Produk';
-        $this->param['data'] = Products::select('products.*', 'supplier.name AS supplier_name')
-                                        ->join('supplier', 'supplier.supplier_code', 'products.supplier_code')
-                                        ->orderBy('products.product_code', 'ASC')
+        $this->param['data'] = Products::orderBy('products.product_code', 'ASC')
                                         ->get();
+        // $this->param['data'] = Products::select('products.*', 'supplier.name AS supplier_name')
+        //                                 ->join('supplier', 'supplier.supplier_code', 'products.supplier_code')
+        //                                 ->orderBy('products.product_code', 'ASC')
+        //                                 ->get();
         $this->param['top_button'] = route('product.create');
 
         return view('backend.product.index', $this->param);
@@ -58,7 +60,7 @@ class ProductController extends Controller
             $productCode = "P0001";
         }
         $this->param['product_code'] = $productCode;
-        $this->param['supplier_code'] = Supplier::orderBy('supplier_code', 'ASC')->get();
+        // $this->param['supplier_code'] = Supplier::orderBy('supplier_code', 'ASC')->get();
 
         return view('backend.product.create', $this->param);
     }
@@ -76,7 +78,7 @@ class ProductController extends Controller
                 'product_code' => 'required',
                 'product_name' => 'required|min:3|max:50|unique:products,name',
                 'cover' => 'required',
-                'supplier_code' => 'required',
+                // 'supplier_code' => 'required',
                 'stock' => 'required',
                 'price' => 'required',
                 'sell_price' => 'required'
@@ -91,7 +93,7 @@ class ProductController extends Controller
                 'product_code' => 'Kode produk',
                 'product_name' => 'Nama produk',
                 'cover' => 'Foto Sampul',
-                'supplier_code' => 'Suplier',
+                // 'supplier_code' => 'Suplier',
                 'stock' => 'Stok',
                 'price' => 'Harga beli',
                 'sell_price' => 'Harga jual'
@@ -116,7 +118,7 @@ class ProductController extends Controller
                     DB::table('products')->insert([
                         'product_code' => $request->get('product_code'),
                         'name' => $request->get('product_name'),
-                        'supplier_code' => $request->get('supplier_code'),
+                        // 'supplier_code' => $request->get('supplier_code'),
                         'cover' => $folder.'/'.$filename,
                         'stock' => $request->get('stock'),
                         'price' => $request->get('price'),
@@ -158,7 +160,7 @@ class ProductController extends Controller
             $this->param['subtitle'] = 'Edit';
             $this->param['top_button'] = route('product.index');
             $this->param['product'] = Products::where('product_code', $productCode)->first();
-            $this->param['supplier_code'] = Supplier::orderBy('supplier_code', 'ASC')->get();
+            // $this->param['supplier_code'] = Supplier::orderBy('supplier_code', 'ASC')->get();
             
             return view('backend.product.edit', $this->param);
         }
@@ -189,7 +191,7 @@ class ProductController extends Controller
                 [
                     'product_code' => 'required',
                     'product_name' => 'required|min:3|max:50'.$isUnique,
-                    'supplier_code' => 'required',
+                    // 'supplier_code' => 'required',
                     'stock' => 'required',
                     'price' => 'required',
                     'sell_price' => 'required'
@@ -203,7 +205,7 @@ class ProductController extends Controller
                 [
                     'product_code' => 'Kode produk',
                     'product_name' => 'Nama produk',
-                    'supplier_code' => 'Suplier',
+                    // 'supplier_code' => 'Suplier',
                     'stock' => 'Stok',
                     'price' => 'Harga beli',
                     'sell_price' => 'Harga jual'
@@ -230,7 +232,7 @@ class ProductController extends Controller
                                 DB::table('products')->where('product_code', $productCode)->update([
                                     'product_code' => $request->get('product_code'),
                                     'name' => $request->get('product_name'),
-                                    'supplier_code' => $request->get('supplier_code'),
+                                    // 'supplier_code' => $request->get('supplier_code'),
                                     'cover' => $folder.'/'.$filename,
                                     'stock' => $request->get('stock'),
                                     'price' => $request->get('price'),
@@ -246,7 +248,7 @@ class ProductController extends Controller
                 DB::table('products')->where('product_code', $productCode)->update([
                     'product_code' => $request->get('product_code'),
                     'name' => $request->get('product_name'),
-                    'supplier_code' => $request->get('supplier_code'),
+                    // 'supplier_code' => $request->get('supplier_code'),
                     'stock' => $request->get('stock'),
                     'price' => $request->get('price'),
                     'sell_price' => $request->get('sell_price'),

@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="formNama">Nama Produk</label><span class="text-danger">*</span>
+                                    <label for="formNama">Nama Resep</label><span class="text-danger">*</span>
                                     <input type="text" class="form-control" id="formNama" name="recipe_name" placeholder="ex : Pecel" value="{{ old('recipe_name') }}">
                                     @error('recipe_name')
                                     <p class="text-danger">{{ $message }}</p>
@@ -77,7 +77,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="formStock">Stok(kg)</label><span class="text-danger">*</span>
+                                    <label for="formStock">Stok</label><span class="text-danger">*</span>
                                     <input type="number" class="form-control" id="formStock" name="stock" placeholder="ex : 20" value="{{ old('stock') }}">
                                     @error('stock')
                                     <p class="text-danger">{{ $message }}</p>
@@ -86,7 +86,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="formLaba">Laba</label>
+                                    <label for="formLaba">Laba(Rp)</label><span class="text-danger">*</span>
                                     <input type="number" class="form-control" id="formLaba" name="laba" placeholder="ex : 7,000.00" value="{{ old('laba') }}">
                                     @error('laba')
                                     <p class="text-danger">{{ $message }}</p>
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                         </div>
-                        @include('backend.recipe.create-detail')
+                        {{-- @include('backend.recipe.create-detail') --}}
                         <div class="form-inline">
                             <input type="submit" value="Simpan" class="btn btn-success mr-2">
                             <input type="reset" value="Batal" class="btn btn-danger">

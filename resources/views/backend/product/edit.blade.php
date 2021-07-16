@@ -57,9 +57,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="formNama">Nama Produk</label><span class="text-danger">*</span>
                                     <input type="text" class="form-control" id="formNama" name="product_name" placeholder="ex : Sayur Bayam" value="{{ old('product_name', $product->name) }}">
@@ -68,6 +66,17 @@
                                     @enderror
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            {{-- <div class="col">
+                                <div class="form-group">
+                                    <label for="formNama">Nama Produk</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="formNama" name="product_name" placeholder="ex : Sayur Bayam" value="{{ old('product_name', $product->name) }}">
+                                    @error('product_name')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div> --}}
                             <div class="col">
                                 <div class="form-group">
                                     <label for="formCover">Sampul</label>
@@ -79,8 +88,17 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="formStock">Stok(biji)</label><span class="text-danger">*</span>
+                                    <input type="number" class="form-control" id="formStock" name="stock" placeholder="ex : 20" value="{{ old('stock', $product->stock) }}">
+                                    @error('stock')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="formSupplier">Suplier</label><span class="text-danger">*</span>
@@ -104,7 +122,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">

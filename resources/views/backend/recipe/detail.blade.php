@@ -12,7 +12,7 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ms-auto">
-                        <li><a href="#" class="fw-normal">{{ $title }}&nbsp;/&nbsp;{{ $subtitle }}</a></li>
+                        <li><a href="#" class="fw-normal">{{ $title }}/{{ $subtitle }}</a></li>
                     </ol>
                 </div>
             </div>
@@ -40,71 +40,90 @@
                         <strong>Terjadi kesalahan!</strong>&nbsp;{{ session('error') }}.
                     </div>
                     @endif
-                    <h3 class="box-title">{{ $subtitle }}</h3>
                     <a href="{{ $top_button }}" class="btn btn-primary text-white">
                         Lihat Data
                     </a>
-                    <form class="mt-4" action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method("PUT")
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="formNama">Nama Lengkap</label><span class="text-danger">*</span>
-                                    <input type="text" class="form-control" id="formNama" name="nama_lengkap" placeholder="ex : Abdul Hadi" value="{{ old('nama_lengkap', $user->name) }}">
-                                    @error('nama_lengkap')
-                                    <p class="text-danger">{{ $message }}</p>
-                                    @enderror
+                    <h3 class="box-title mt-4">{{ $subtitle }}</h3>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-md-responsive table-bordered mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left">Nama Resep</th>
+                                        <th class="text-center">:</th>
+                                        <th class="text-center">{{ $recipe->name }}</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Banyaknya Bahan</th>
+                                        <th class="text-center">:</th>
+                                        <th class="text-center">{{ count($recipe_item) }}</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 class="box-title mt-4">Bahan-bahan</h3>
+                    @forelse ($recipe_item as $item)
+                    <div class="row p-0">
+                        <div class="col-md-8">
+                            <div class="card-group m-0 ">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <p class="card-text">Bahan ke-{{ $loop->iteration }}</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-text">{{ $item->product_name }}</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="formUsername">Username</label><span class="text-danger">*</span>
-                                    <input type="text" class="form-control" id="formUsername" name="username" placeholder="ex : hadi123" value="{{ old('username', $user->username) }}">
-                                    @error('username')
-                                    <p class="text-danger">{{ $message }}</p>
-                                    @enderror
+                            <div class="card-group">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <p class="card-text">Takaran</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-text">{{ $item->dose }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="formPassword">Password</label><span class="text-danger">*</span>
-                                    <input type="password" class="form-control" id="formPassword" name="password" placeholder="ex : xxxxxx">
-                                    @error('password')
-                                    <p class="text-danger">{{ $message }}</p>
-                                    @enderror
+                    </div>
+                    {{-- <div class="row pl-3">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="text-left">Bahan ke-{{ $loop->iteration }}</label>
+                                </div>
+                                <div class="col">
+                                    <label class="text-left">Bahan ke-{{ $loop->iteration }}</label>
+                                </div>
+                                <div class="col">
+                                    <label class="text-left">Bahan ke-{{ $loop->iteration }}</label>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="formKonfirmPass">Konfirmasi Password</label><span class="text-danger">*</span>
-                                    <input type="password" class="form-control" id="formKonfirmPass" name="password_confirmation" placeholder="ex : xxxxxx">
-                                    @error('password_confirmation')
-                                    <p class="text-danger">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                            </div>
+                            <table class="table table-md-responsive table-bordered mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left">Bahan ke-{{ $loop->iteration }}</th>
+                                        <th class="text-center">:</th>
+                                        <th class="text-center">{{ $item->product_name }}</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Takaran</th>
+                                        <th class="text-center">:</th>
+                                        <th class="text-center">{{ $item->dose }}</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="formPhoto">Foto Profil</label>
-                                    <input type="file" name="photo_profile" id="formPhoto" class="form-control">
-                                    @if ($user->profile_photo != null)
-                                    <a style="cursor: pointer;" data-toggle="modal" class="showDetailData" data-target=".modal-show-detail" data-image="{{ url(''.$user->profile_photo) }}">
-                                        <img src="{{ url(''.$user->profile_photo) }}" class="rounded mt-2 mb-2" alt="{{ $user->name }}" width="80" height="80">
-                                    </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-inline">
-                            <input type="submit" value="Simpan" class="btn btn-success mr-2">
-                            <input type="reset" value="Batal" class="btn btn-danger">
-                        </div>
-                    </form>
+                    </div> --}}
+                    @empty
+                    <h5 class="box-title mt-4 text-muted">Bahan-bahan belum ada.</h5>
+                    @endforelse
                 </div>
             </div>
         </div>

@@ -72,15 +72,17 @@
                                 </td>
                                 <td class="text-center">{{ $item->username }}</td>
                                 <td>
-                                    <div class="form-inline p-0">
-                                        <a href="{{ route('user.edit', $item) }}" class="btn btn-success mr-2" title="Edit" data-toggle="tooltip"> <span class="fa fa-pen"></span> </a>
-                                        <form action="{{ route('user.destroy', $item) }}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="button" class="btn btn-danger" title="Hapus" data-toggle="tooltip" onclick="confirm('{{ __("Apakah anda yakin ingin menghapus?") }}') ? this.parentElement.submit() : ''">
-                                                <span class="fa fa-minus-circle"></span>
-                                            </button>
-                                        </form>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="form-inline p-0">
+                                            <a href="{{ route('user.edit', $item) }}" class="btn btn-success mr-2" title="Edit" data-toggle="tooltip"> <span class="fa fa-pen"></span> </a>
+                                            <form action="{{ route('user.destroy', $item) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="button" class="btn btn-danger" title="Hapus" data-toggle="tooltip" onclick="confirm('{{ __("Apakah anda yakin ingin menghapus?") }}') ? this.parentElement.submit() : ''">
+                                                    <span class="fa fa-minus-circle"></span>
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
