@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
       <h1>SayurMayur</h1>
-      <h2>adalah layanan pemesanan kebutuhan pokok dengan menggunakan aplikasi sayurmayur, 
+      <h2>Layanan pemesanan kebutuhan pokok dengan menggunakan aplikasi SayurMayur, 
           anda dapat melakukan pembelian kebutuhan harian khususnya sayur-sayuran dengan berbagai resep masakan. 
           Hanya dengan menggunakan perangkat smartphone anda, kapan dan dimana saja anda dapat berbelanja.</h2>
     </div>

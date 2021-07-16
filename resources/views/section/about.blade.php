@@ -7,19 +7,18 @@
             <img src="assets/frontend/img/about.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+            <h3>Mengapa perlu menggunakan SayurMayur?</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+            Di dalam aplikasi Sayur-Mayur, pengguna akan menemukan berbagai macam sayuran, resep, serta bahan-bahan yang dibutuhkan.
+            Tanpa perlu khawatir mendapatkan sayuran yang tidak segar, karena sayuran yang dijual di Aplikasi SayurMayur sudah terjamin kualitasnya. 
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
+              <li><i class="bi bi-check-circle"></i> Mudah Digunakan.</li>
+              <li><i class="bi bi-check-circle"></i> Mempersingkat waktu para pembeli sayuran.</li>
+              <li><i class="bi bi-check-circle"></i> Sayuran yang tersedia dijamin segar dan kualitas terbaik.</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
+              Tidak perlu khawatir dan takut kehabisan dalam membeli sayuran lagi, tinggal pesan dan akan langsung diantar kerumah.
             </p>
           </div>
         </div>
