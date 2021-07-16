@@ -64,9 +64,9 @@
         @include('section.portfolio')
     @show
 
-    @section('tertimonials')
+    {{-- @section('tertimonials')
         @include('section.tertimonials')
-    @show
+    @show --}}
 
     @section('cta')
         
@@ -76,9 +76,9 @@
         @include('section.team')
     @show
 
-    @section('contact')
+    {{-- @section('contact')
         @include('section.contact')
-    @show
+    @show --}}
 
   </main><!-- End #main -->
 

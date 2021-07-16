@@ -9,13 +9,13 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          {{-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="">Pesan Antar</a></h4>
               <p>Layanan ini bisa digunakan untuk membeli sayur lewat platform SayurMayur.</p>
             </div>
-          </div>
+          </div> --}}
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
@@ -33,13 +33,13 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          {{-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4><a href="">Supplier</a></h4>
               <p>Layanan yang digunakan untuk para supplier untuk mensuplai sayuran yang segar dan kualitas terbaik.</p>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 

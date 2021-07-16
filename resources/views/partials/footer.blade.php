@@ -8,17 +8,18 @@
     <div class="row  justify-content-center">
       <div class="col-lg-6">
         <h3>SayurMayur</h3>
-        <p> Hanya dengan menggunakan perangkat smartphone anda, kapan dan dimana saja anda dapat berbelanja sayur tanpa perlu repot lagi.</p>
+        {{-- <p> Hanya dengan menggunakan perangkat smartphone anda, kapan dan dimana saja anda dapat berbelanja sayur tanpa perlu repot lagi.</p> --}}
+        <p> Hanya dengan menggunakan perangkat smartphone anda, saat dirumah pun anda bisa membuat resep favorit anda tanpa perlu repot lagi.</p>
       </div>
     </div>
 
-    <div class="row footer-newsletter justify-content-center">
+    {{-- <div class="row footer-newsletter justify-content-center">
       <div class="col-lg-6">
         <form action="" method="post">
           <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
         </form>
       </div>
-    </div>
+    </div> --}}
 
     <div class="social-links">
       <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
