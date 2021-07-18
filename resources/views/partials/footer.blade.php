@@ -12,6 +12,12 @@
         <p> Hanya dengan menggunakan perangkat smartphone anda, saat dirumah pun anda bisa membuat menu dan melihat resep favorit anda tanpa perlu repot lagi.</p>
       </div>
     </div>
+<p></p>
+    <h8>Kunjungi kami di</h8>
+
+    <div class="social-links">
+      <a href="#" class="PlayStore"><i class="bi bi-bag"></i></a>
+    </div>
 
     {{-- <div class="row footer-newsletter justify-content-center">
       <div class="col-lg-6">
@@ -19,7 +25,7 @@
           <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
         </form>
       </div>
-    </div> --}}
+    </div> 
 
     <div class="social-links">
       <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -27,7 +33,7 @@
       <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
       <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
       <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-    </div>
+    </div>--}}
 
   </div>
 </div>

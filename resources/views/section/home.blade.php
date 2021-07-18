@@ -12,7 +12,7 @@
           anda dapat melakukan pembelian kebutuhan harian khususnya sayur-sayuran dengan berbagai resep masakan. 
           Hanya dengan menggunakan perangkat smartphone anda, kapan dan dimana saja anda dapat berbelanja.</h2> --}}
     </div>
-    <div class="col-lg-4 order-1 order-lg-2 sayur-mayur">
+    <div class="col-lg-4 order-1 order-lg-2 sayur-mayur ">
       <img src="assets/frontend/img/sayur-mayur.png" class="img-fluid animated" alt="">
     </div>
   </div>

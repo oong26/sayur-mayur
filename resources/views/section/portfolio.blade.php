@@ -17,7 +17,7 @@
           </div>
         </div>
 
-        <div class="row portfolio-container">
+        <div class="row portfolio-container justify-content-center">
 
         <div class="col-lg-3 col-md-1 portfolio-item filter-app">
             <img src="assets/frontend/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
