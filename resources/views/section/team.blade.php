@@ -5,10 +5,76 @@
         <div class="section-title">
           <span>Team</span>
           <h2>Team</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+          <p>Green Idea berisikan 5 orang yaitu</p>
         </div>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-2 col-md-3 d-flex align-items-stretch">
+            <div class="member">
+            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+              <h6>Muhammad Khalil Zhillullah</h6>
+              <span>Leader</span>
 
-        <div class="row">
+              <div class="social">
+                <a href=""><i class="bi bi-whatsapp"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+              <h6>Farhan Nabilah Sholeh</h6>
+              <span>Member</span>
+
+              <div class="social">
+              <a href=""><i class="bi bi-whatsapp"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+              <h6>Riskie Nur Fadilah</h6>
+              <span>Member</span>
+
+              <div class="social">
+              <a href=""><i class="bi bi-whatsapp"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+              <h6>Diana Fithri Lestari</h6>
+              <span>Member</span>
+
+              <div class="social">
+              <a href=""><i class="bi bi-whatsapp"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>        
+
+          <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+              <h6>Marsella Dwi Faira</h6>
+              <span>Member</span>
+
+              <div class="social">
+              <a href=""><i class="bi bi-whatsapp"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          
+       {{-- <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <img src="assets/frontend/img/team/team-1.jpg" alt="">
@@ -58,9 +124,9 @@
                 <a href=""><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
-          </div>
+          </div> 
 
-        </div>
+        </div> --}}
 
       </div>
     </section><!-- End Team Section -->
