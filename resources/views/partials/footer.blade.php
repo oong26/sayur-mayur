@@ -9,7 +9,7 @@
       <div class="col-lg-6">
         <h3>SayurMayur</h3>
         {{-- <p> Hanya dengan menggunakan perangkat smartphone anda, kapan dan dimana saja anda dapat berbelanja sayur tanpa perlu repot lagi.</p> --}}
-        <p> Hanya dengan menggunakan perangkat smartphone anda, saat dirumah pun anda bisa membuat resep favorit anda tanpa perlu repot lagi.</p>
+        <p> Hanya dengan menggunakan perangkat smartphone anda, saat dirumah pun anda bisa membuat menu dan melihat resep favorit anda tanpa perlu repot lagi.</p>
       </div>
     </div>
 

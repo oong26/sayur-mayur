@@ -19,7 +19,43 @@
 
         <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-3 col-md-1 portfolio-item filter-app">
+            <img src="assets/frontend/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Katalog</h4>
+              <p>Resep Terbaru</p>
+              <a href="assets/frontend/img/portfolio/portfolio-1.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Resep Terbaru"><i class="bx bx-image"></i></a>
+            </div>
+          </div>
+                
+        <div class="col-lg-3 col-md-1 portfolio-item filter-app">
+            <img src="assets/frontend/img/portfolio/portfolio-2.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Katalog</h4>
+              <p>Resep</p>
+              <a href="assets/frontend/img/portfolio/portfolio-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Resep"><i class="bx bx-image"></i></a>
+            </div>
+          </div> 
+
+        <div class="col-lg-3 col-md-1 portfolio-item filter-app">
+            <img src="assets/frontend/img/portfolio/portfolio-3.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Katalog</h4>
+              <p>Bahan-Bahan</p>
+              <a href="assets/frontend/img/portfolio/portfolio-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Bahan-Bahan"><i class="bx bx-image"></i></a>
+            </div>
+          </div>
+          
+        <div class="col-lg-3 col-md-1 portfolio-item filter-app">
+            <img src="assets/frontend/img/portfolio/portfolio-4.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Profil</h4>
+              <p>Profilku</p>
+              <a href="assets/frontend/img/portfolio/portfolio-4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Profil"><i class="bx bx-image"></i></a>
+            </div>
+          </div>
+
+          {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <img src="assets/frontend/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>App 1</h4>
@@ -107,7 +143,7 @@
               <a href="assets/frontend/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
-          </div>
+          </div>   --}}
 
         </div>
 

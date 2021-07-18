@@ -19,7 +19,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
+              <div class="icon"><i class="bi bi-book"></i></div>
               <h4><a href="">Resep</a></h4>
               <p>Memudahkan dalam memilih menu masakan lengkap dengan bahan-bahannya.</p>
             </div>
@@ -27,9 +27,9 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <div class="icon"><i class="bi bi-egg-fried"></i></div>
               <h4><a href="">Bahan-bahan</a></h4>
-              <p>Aneka sayuran yang bisa dibeli dengan kualitas terbaik dan segar.</p>
+              <p>Aneka bahan yang digunakan untuk memasak menu favorit.</p>
             </div>
           </div>
 
