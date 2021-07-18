@@ -15,7 +15,7 @@ class NullableEmailOnAndroidUsersTable extends Migration
     {
         Schema::table('android_users', function (Blueprint $table) {
             $table->dropUnique('android_users_email_unique');
-            $table->string('email', 50)->after('address')->nullable();
+            $table->string('email', 50)->after('address')->nullable()->change();
         });
     }
 
