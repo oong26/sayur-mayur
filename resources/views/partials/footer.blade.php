@@ -12,14 +12,19 @@
         <p> Hanya dengan menggunakan perangkat smartphone anda, saat dirumah pun anda bisa membuat menu dan melihat resep favorit anda tanpa perlu repot lagi.</p>
       </div>
     </div>
-<p></p>
-    <h8>Kunjungi kami di</h8>
+    <p></p>
+    <p></p>
+    <h4>Unduh aplikasi Sayur Mayur di Play Store sekarang juga.</h4>
 
     <div class="social-links">
-      <a href="#" class="PlayStore"><i class="bi bi-bag"></i></a>
+      <a href="#" class="playstore"><i class="bi bi-bag"></i></a>
     </div>
+    <span>Play Store</span>
 
-    {{-- <div class="row footer-newsletter justify-content-center">
+    {{-- 
+
+
+    <div class="row footer-newsletter justify-content-center">
       <div class="col-lg-6">
         <form action="" method="post">
           <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
