@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-2 col-md-3 d-flex align-items-stretch">
             <div class="member">
-            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+            <img src="assets/frontend/img/team/team-1.png" alt="">
               <h6>Muhammad Khalil Zhillullah</h6>
               <span>Leader</span>
 
@@ -24,7 +24,7 @@
 
           <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
             <div class="member">
-            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+            <img src="assets/frontend/img/team/team-1.png" alt="">
               <h6>Farhan Nabilah Sholeh</h6>
               <span>Member</span>
 
@@ -37,7 +37,7 @@
 
           <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
             <div class="member">
-            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+            <img src="assets/frontend/img/team/team-1.png" alt="">
               <h6>Riskie Nur Fadilah</h6>
               <span>Member</span>
 
@@ -50,7 +50,7 @@
 
           <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
             <div class="member">
-            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+            <img src="assets/frontend/img/team/team-1.png" alt="">
               <h6>Diana Fithri Lestari</h6>
               <span>Member</span>
 
@@ -63,7 +63,7 @@
 
           <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
             <div class="member">
-            <img src="assets/frontend/img/team/team-1.jpg" alt="">
+            <img src="assets/frontend/img/team/team-1.png" alt="">
               <h6>Marsella Dwi Faira</h6>
               <span>Member</span>
 
